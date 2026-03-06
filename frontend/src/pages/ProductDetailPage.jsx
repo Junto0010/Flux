@@ -15,7 +15,7 @@ const ProductDetailPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products/${id}`)
+    axios.get(`https://flux-backend-hu18.onrender.com/api/products/${id}`)
       .then(r => { setProduct(r.data); setLoading(false); })
       .catch(() => setLoading(false));
   }, [id]);

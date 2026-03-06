@@ -17,7 +17,7 @@ const LoginPage = () => {
     setError('');
     setLoading(true);
     try {
-      const { data } = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const { data } = await axios.post('https://flux-backend-hu18.onrender.com/api/auth/login', { email, password });
       login(data);
       toast.success('Welcome back!');
       navigate(data.isAdmin ? '/admin' : '/products');

@@ -11,7 +11,7 @@ const AdminOrders = () => {
 
   const fetchOrders = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/orders', config);
+      const { data } = await axios.get('https://flux-backend-hu18.onrender.com/api/orders', config);
       setOrders(data);
     } catch (err) {
       toast.error('Failed to load orders');
@@ -23,7 +23,7 @@ const AdminOrders = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      await axios.put(`http://localhost:5000/api/orders/${id}/status`, { status }, config);
+      await axios.put(`https://flux-backend-hu18.onrender.com/api/orders/${id}/status`, { status }, config);
       toast.success('Status updated!');
       fetchOrders();
     } catch (err) {

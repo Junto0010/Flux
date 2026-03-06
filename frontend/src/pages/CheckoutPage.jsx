@@ -22,7 +22,7 @@ const CheckoutPage = () => {
     }
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/orders', {
+      await axios.post('https://flux-backend-hu18.onrender.com/api/orders', {
         items: cartItems,
         totalPrice: total,
         shippingAddress: address,

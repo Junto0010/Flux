@@ -16,7 +16,7 @@ const ProductsPage = () => {
       const params = {};
       if (search) params.search = search;
       if (category !== 'All') params.category = category;
-      const { data } = await axios.get('http://localhost:5000/api/products', { params });
+      const { data } = await axios.get('https://flux-backend-hu18.onrender.com/api/products', { params });
       setProducts(data);
     } catch (err) {
       console.error(err);

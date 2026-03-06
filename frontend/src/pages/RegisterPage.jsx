@@ -18,7 +18,7 @@ const RegisterPage = () => {
     if (form.password !== form.confirm) { setError('Passwords do not match'); return; }
     setLoading(true);
     try {
-      const { data } = await axios.post('http://localhost:5000/api/auth/register', {
+      const { data } = await axios.post('https://flux-backend-hu18.onrender.com/api/auth/register', {
         name: form.name, email: form.email, password: form.password
       });
       login(data);

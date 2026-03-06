@@ -14,7 +14,7 @@ const AdminProducts = () => {
   const config = { headers: { Authorization: `Bearer ${user?.token}` } };
 
   const fetchProducts = async () => {
-    const { data } = await axios.get('http://localhost:5000/api/products');
+    const { data } = await axios.get('https://flux-backend-hu18.onrender.com/api/products');
     setProducts(data);
     setLoading(false);
   };
@@ -26,10 +26,10 @@ const AdminProducts = () => {
     e.preventDefault();
     try {
       if (editing) {
-        await axios.put(`http://localhost:5000/api/products/${editing}`, form, config);
+        await axios.put(`https://flux-backend-hu18.onrender.com/api/products/${editing}`, form, config);
         toast.success('Product updated!');
       } else {
-        await axios.post('http://localhost:5000/api/products', form, config);
+        await axios.post('https://flux-backend-hu18.onrender.com/api/products', form, config);
         toast.success('Product created!');
       }
       setForm(EMPTY);
@@ -48,7 +48,7 @@ const AdminProducts = () => {
 
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this product?')) return;
-    await axios.delete(`http://localhost:5000/api/products/${id}`, config);
+    await axios.delete(`https://flux-backend-hu18.onrender.com/api/products/${id}`, config);
     toast.success('Deleted!');
     fetchProducts();
   };
